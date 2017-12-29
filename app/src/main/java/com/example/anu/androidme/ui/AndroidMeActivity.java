@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 
 import com.example.anu.androidme.R;
+import com.example.anu.androidme.data.AndroidImageAssets;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,9 +26,31 @@ public class AndroidMeActivity extends AppCompatActivity {
          * add {@link BodyPartFragment} to display head
          */
         BodyPartFragment headFragment = new BodyPartFragment();
+        headFragment.setmImageIds(AndroidImageAssets.getHeads());
+        headFragment.setmListIndex(1);
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .add(R.id.container_head, headFragment)
+                .commit();
+
+        /**
+         * add {@link BodyPartFragment} to display body
+         */
+        BodyPartFragment bodyFragment = new BodyPartFragment();
+        bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
+        bodyFragment.setmListIndex(1);
+        fragmentManager.beginTransaction()
+                .add(R.id.container_body, bodyFragment)
+                .commit();
+
+        /**
+         * add {@link BodyPartFragment} to display leg
+         */
+        BodyPartFragment legFragment = new BodyPartFragment();
+        legFragment.setmImageIds(AndroidImageAssets.getLegs());
+        legFragment.setmListIndex(1);
+        fragmentManager.beginTransaction()
+                .add(R.id.container_leg, legFragment)
                 .commit();
     }
 }

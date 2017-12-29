@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin16">16dp</dimen>
-    <dimen name="head_part_height">200dp</dimen>
+    <dimen name="container_height">180dp</dimen>
 </resources>

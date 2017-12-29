@@ -11,9 +11,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <!--container to display head-->
         <FrameLayout
             android:id="@+id/container_head"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/head_part_height"/>
+            android:layout_height="@dimen/container_height"/>
+
+        <!--container to display body-->
+        <FrameLayout
+            android:id="@+id/container_body"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/container_height"/>
+
+        <!--container to display leg-->
+        <FrameLayout
+            android:id="@+id/container_leg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/container_height"/>
     </LinearLayout>
 </ScrollView>
