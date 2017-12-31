@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:name="com.example.anu.androidme.ui.MasterListFragment">
+
+    <fragment
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:name="com.example.anu.androidme.ui.MasterListFragment"/>
+    <LinearLayout
+        android:id="@+id/linear_layout_two_pane"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/margin16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--container to display head-->
+        <FrameLayout
+            android:id="@+id/container_head"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/container_height"/>
+
+        <!--container to display body-->
+        <FrameLayout
+            android:id="@+id/container_body"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/container_height"/>
+
+        <!--container to display leg-->
+        <FrameLayout
+            android:id="@+id/container_leg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/container_height"/>
+    </LinearLayout>
+</LinearLayout>

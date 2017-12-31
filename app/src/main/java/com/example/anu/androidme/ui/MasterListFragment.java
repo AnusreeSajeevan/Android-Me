@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -49,7 +50,6 @@ public class MasterListFragment extends Fragment {
         View view = LayoutInflater.from(getActivity())
                 .inflate(R.layout.fragment_master_list, container, false);
         unbinder = ButterKnife.bind(this, view);
-
         masterListAdapter = new MasterListAdapter(getActivity(), AndroidImageAssets.getAll());
         gridView.setAdapter(masterListAdapter);
 

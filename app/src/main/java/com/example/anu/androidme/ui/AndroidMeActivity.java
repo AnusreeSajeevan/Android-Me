@@ -19,11 +19,23 @@ public class AndroidMeActivity extends AppCompatActivity {
     @BindView(R.id.container_head)
     FrameLayout containerBody;
 
+    private int headIndex;
+    private int bodyIndex;
+    private int legIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
         ButterKnife.bind(this);
+
+        /**
+         * get head, body and leg indices from intent
+         */
+        Bundle bundle = getIntent().getExtras();
+        headIndex = bundle.getInt(MainActivity.KEY_HEAD_INDEX);
+        bodyIndex = bundle.getInt(MainActivity.KEY_BODY_INDEX);
+        legIndex = bundle.getInt(MainActivity.KEY_LEG_INDEX);
 
         if (null == savedInstanceState){
             /**
@@ -31,7 +43,7 @@ public class AndroidMeActivity extends AppCompatActivity {
              */
             BodyPartFragment headFragment = new BodyPartFragment();
             headFragment.setmImageIds(AndroidImageAssets.getHeads());
-            headFragment.setmListIndex(1);
+            headFragment.setmListIndex(headIndex);
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
                     .add(R.id.container_head, headFragment)
@@ -42,7 +54,7 @@ public class AndroidMeActivity extends AppCompatActivity {
              */
             BodyPartFragment bodyFragment = new BodyPartFragment();
             bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
-            bodyFragment.setmListIndex(1);
+            bodyFragment.setmListIndex(bodyIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.container_body, bodyFragment)
                     .commit();
@@ -52,7 +64,7 @@ public class AndroidMeActivity extends AppCompatActivity {
              */
             BodyPartFragment legFragment = new BodyPartFragment();
             legFragment.setmImageIds(AndroidImageAssets.getLegs());
-            legFragment.setmListIndex(1);
+            legFragment.setmListIndex(legIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.container_leg, legFragment)
                     .commit();
